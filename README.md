@@ -23,4 +23,9 @@
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+## Tech Stack
+
+- Reactjs in JavaScript
+- TailwindCSS
+
 <small>Made with 💙 by <a href="https://github.com/shvam0000">Shivam Shekhar</a></small>
