@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Download from './UI/Icons/Download';
 import Like from './UI/Icons/Like';
 import Redirect from './UI/Icons/Redirect';
 
