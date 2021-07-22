@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import Spinner from './components/UI/Spinner';
-import axios from 'axios';
-import Search from './components/Search';
+import React, { useState, useEffect } from 'react';
 import Card from './components/Card';
-
-const App = () => {
+import Search from './components/Search';
+import Spinner from './components/UI/Spinner';
+const App = (props) => {
   const [images, setImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [term, setTerm] = useState('');
 
   useEffect(() => {
-    axios
-      .get(
-        `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`
-      )
-      .then((response) => response.json())
+    fetch(
+      `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`
+    )
+      .then((res) => res.json())
       .then((data) => {
         setImages(data.hits);
         setIsLoading(false);
@@ -23,15 +20,19 @@ const App = () => {
   }, [term]);
 
   return (
-    <div>
+    <div className='container mx-auto'>
       <Search searchText={(text) => setTerm(text)} />
 
-      {!isLoading && images.length === 0 && <h1>No Images Found</h1>}
+      {!isLoading && images.length === 0 && (
+        <h1 className='text-5xl text-center mx-auto mt-32'>No Images found</h1>
+      )}
 
       {isLoading ? (
-        <Spinner />
+        <p>
+          <Spinner />
+        </p>
       ) : (
-        <div>
+        <div className='grid grid-cols-3 gap-4'>
           {images.map((image) => (
             <Card key={image.id} image={image} />
           ))}
