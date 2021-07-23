@@ -16,7 +16,7 @@ const Card = ({ image }) => {
   };
 
   return (
-    <div className='flex flex-col mt-3 items-center justify-center max-w-sm mx-auto font-montserrat'>
+    <div className='flex flex-col mt-3 items-center justify-center max-w-xl mx-auto font-montserrat'>
       <img
         className='w-auto h-auto rounded-lg shadow-2xl'
         src={image.webformatURL}

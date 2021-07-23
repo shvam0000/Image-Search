@@ -32,7 +32,7 @@ const App = (props) => {
           <Spinner />
         </p>
       ) : (
-        <div className='grid grid-cols-3 gap-4'>
+        <div className='grid grid-cols-2 gap-5'>
           {images.map((image) => (
             <Card key={image.id} image={image} />
           ))}
