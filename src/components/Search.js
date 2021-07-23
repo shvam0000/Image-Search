@@ -27,7 +27,7 @@ const ImageSearch = ({ searchText }) => {
             placeholder='Search...'
           />
           <button
-            className='bg-gray-700 text-white text-xl font-extrabold px-5 py-2 rounded-lg ml-5 hover:bg-gray-600 focus:outline-none focus:bg-gray-700'
+            className='bg-gray-700 text-white md:text-xl font-extrabold px-5 py-2 rounded-lg ml-5 hover:bg-gray-600 focus:outline-none focus:bg-gray-700'
             type='submit'
             onClick={downloadImage}>
             Search

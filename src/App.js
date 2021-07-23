@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Card from './components/Card';
 import Search from './components/Search';
 import Spinner from './components/UI/Spinner';
+import Zoom from 'react-reveal/Zoom';
+
 const App = (props) => {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -32,9 +34,11 @@ const App = (props) => {
           <Spinner />
         </p>
       ) : (
-        <div className='grid grid-cols-2 gap-5'>
+        <div className='md:grid md:grid-cols-2 gap-5'>
           {images.map((image) => (
-            <Card key={image.id} image={image} />
+            <Zoom>
+              <Card key={image.id} image={image} />
+            </Zoom>
           ))}
         </div>
       )}
